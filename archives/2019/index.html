@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">
+            
+                <span>部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题</span>
+        </a>
+        <div class="abstract-content">
+            
+Android Studio版本：3.2.1
+操作系统：windows 10
+
+在运行官方demo时，出现如下图黑屏情况：初步断定，没有打开到相机应用，于是定位到Camera.Activity时，发现的确报错，如图：
+原来，这是因为由于Android studio3.2.1版本问题，在AndroidManifest.xml中弃用了&lt;uses-sdk&gt;标签，导致Activity默认读取SDKversion为1同时，还有一点至为关键，按照步骤执行官方提示的步骤时，把如下nativeBuildSystem设置为’none’。再滚动到defaultConfig中，发现问题就出现在这...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="TensorFlow爬坑记">TensorFlow爬坑记</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/">
             
                 <span>Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题</span>
@@ -630,28 +664,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -671,6 +686,11 @@
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span><a class="archive-post-title" href="/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题</a>
+        </li>
+    
+    
     
     
     
@@ -686,31 +706,13 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day2/">Android开发day2</a>
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day7/">Android开发day7</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/15/Android开发day7/">[Untitled Post]</a>
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day3/">Android开发day3</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -729,7 +731,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day3/">Android开发day3</a>
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day2/">Android开发day2</a>
         </li>
     
     

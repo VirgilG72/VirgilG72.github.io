@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">
+            
+                <span>部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题</span>
+        </a>
+        <div class="abstract-content">
+            
+Android Studio版本：3.2.1
+操作系统：windows 10
+
+在运行官方demo时，出现如下图黑屏情况：初步断定，没有打开到相机应用，于是定位到Camera.Activity时，发现的确报错，如图：
+原来，这是因为由于Android studio3.2.1版本问题，在AndroidManifest.xml中弃用了&lt;uses-sdk&gt;标签，导致Activity默认读取SDKversion为1同时，还有一点至为关键，按照步骤执行官方提示的步骤时，把如下nativeBuildSystem设置为’none’。再滚动到defaultConfig中，发现问题就出现在这...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="TensorFlow爬坑记">TensorFlow爬坑记</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/">
             
                 <span>Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题</span>
@@ -380,10 +414,14 @@
     <article class="index-post">
         <a class="abstract-title" href="/2018/12/15/Android开发day7/">
             
-                <span>[Untitled Post]</span>
+                <span>Android开发day7</span>
         </a>
         <div class="abstract-content">
-            
+            ImageLoader的使用1.下载下载地址
+https://github.com/nostra13/Android-Universal-Image-Loader
+2.运行案例，简单介绍案例
+3.关联库
+4.初始化,Application12345678910111213141516public static void initImageLoader(Context context) &#123;     // This configuration tuning is custom. You can tune every option, you may tune some of them...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -391,6 +429,12 @@
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
             </div>
             <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
+    
+</div>
             
         </div>
     </article>
@@ -642,40 +686,6 @@ SlidingMenu的使用
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/13/科目三注意事项/">
-            
-                <span>科目三注意事项</span>
-        </a>
-        <div class="abstract-content">
-            博主是用了九天时间，一次过科目二和科目三，下面是在练车的时候总结的科目三的注意事项。虽然场地只适用于佛山仙塘考场，但当中的注意事项参考价值还是很大的。（有些地方用粤语写的，看不懂的问问你粤语同学吧。）
-科目三注意事项:上车先交身份证同时调整座位、检验灯光并关全部灯。考官点击开始考试后，下车逆时针走车一周，两个红按钮分别按2s。再上车系安全带。1. 考夜间灯光(死一个扣100分！！！)
-
-前照灯或近光灯(往前转两格):①照明良好②会车！！！！！！③同方向近距离跟车行驶④直行通过路口！！！
-示宽灯+危险灯(往前转一小格+三角形红灯):①在路边发生故障，难以移动②临时停车
-远光灯(往下压一下)...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="驾考">驾考</a>
     
 </div>
             
@@ -944,28 +954,9 @@ SlidingMenu的使用
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -985,6 +976,11 @@ SlidingMenu的使用
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span><a class="archive-post-title" href="/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题</a>
+        </li>
+    
+    
     
     
     
@@ -1000,31 +996,13 @@ SlidingMenu的使用
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day2/">Android开发day2</a>
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day7/">Android开发day7</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/15/Android开发day7/">[Untitled Post]</a>
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day3/">Android开发day3</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -1043,7 +1021,7 @@ SlidingMenu的使用
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day3/">Android开发day3</a>
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/2018/12/15/Android开发day2/">Android开发day2</a>
         </li>
     
     
