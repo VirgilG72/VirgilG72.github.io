@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>VirgilG72&#39;s Blog</title>
+    <title>Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题 · VirgilG72&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">VirgilG72&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">VirgilG72's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="TensorFlow爬坑记">TensorFlow爬坑记</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">274</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/01/17</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,232 +399,57 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day6/">
-            
-                <span>Android开发day6</span>
-        </a>
-        <div class="abstract-content">
-            
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>相信很多人在运行pip install –upgrade tensorflow后会测试TensorFlow是否真正安装成功</p>
+<p>但是，在导入模块时会出现ImportError: DLL load failed: 找不到指定的模块。这个错误。<br>这个错误，博主也踩了不少坑。。。</p>
+<p>首先，博主是按照如下链接进行安装的 ：<br><a href="https://blog.csdn.net/dy_guox/article/details/79081499" target="_blank" rel="noopener">https://blog.csdn.net/dy_guox/article/details/79081499</a></p>
+<p>当到了如下图所示的步骤时：<br><img src="https://img-blog.csdnimg.cn/2019011416542048.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>但再输入第一行 import tensorflow as tf 时出现如下错误：<br><img src="https://img-blog.csdnimg.cn/20190114165132159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后博主不断找解决办法，<strong>重新安装anaconda、重新安装visual studio2015、重新安装Microsoft visual C++2015</strong>等等等等。然后都没什么卵用。</p>
+<p><strong>最终解决办法是：打开Anaconda Prompt，输入如下命令行：</strong></p>
+<p><code>pip install tensorflow==1.4</code></p>
+<p>运行结果如下图：<br><img src="https://img-blog.csdnimg.cn/20190114165838118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>成功把最新版本TensorFlow1.12卸载并安装为TensorFlow1.4版本，最后，博主得出这么一个结论：<strong>由于版本的不断更替，导致网上的教程仅仅适用于当时的TensorFlow版本，所以依照教程安装时，尽量用教程中的TensorFlow版本！</strong></p>
+<p>最后附上，import成功图片~<br><img src="https://img-blog.csdnimg.cn/20190114170154486.png" alt="成功导入"></p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day5/">
-            
-                <span>Android开发day5</span>
-        </a>
-        <div class="abstract-content">
-            第三方联网框架测试性能方案简介Volley联网请求时间第一次 Volley–passTime==178
-第二次Volley–passTime==146
-第三次Volley–passTime==97
-第四次 Volley–passTime==86
-第五次Volley–passTime==48
-第六次Volley–passTime==91
-Volley–passTime==145
-Volley–passTime==47
-XUtils3联网请求第一次 xUtils3–passTime==319
-第二次xUtils3–passTime==50
-第三次xUtils3–passTime==66
-第四...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">Virgil459</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/">http://yoursite.com/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/">January 17th 2019, 10:51:46 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/">January 17th 2019, 5:47:34 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day4/">
-            
-                <span>Android开发day4</span>
-        </a>
-        <div class="abstract-content">
-            顶部新闻轮播图事件处理重写dispatchTouchEvent，并且要在按下的时候getParent().requestDisallowInterceptTouchEvent(true);
-判断滑动方向，在X轴和Y轴滑动的绝对值谁大就是在什么方向滑动
-一，竖直方向滑动 getParent().requestDisallowInterceptTouchEvent(false);
-二，水平方向滑动2.1，当滑动到ViewPager的第0个页面，并且是从左到右滑动 getParent().requestDisallowInterceptTouchEvent(false);
-2.2，当滑动到Vi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day3/">
-            
-                <span>Android开发day3</span>
-        </a>
-        <div class="abstract-content">
-            ViewPagerIndicator的使用
-下载下载地址：https://github.com/JakeWharton/ViewPagerIndicator
-
-解压导入Android studio运行案例ViewPagerIndicator
-
-
-
-开始集成-关联ViewPagerIndicator的库
-
-
-写布局文件
-1234567891011121314151617181920  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;LinearLayout xmlns:android=&quot;htt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day2/">
-            
-                <span>Android开发day2</span>
-        </a>
-        <div class="abstract-content">
-            xUtils3的使用主要功能：数据库的操作，联网请求数据，图片请求，初始化控件 
-
-下载解压下载地址：https://github.com/wyouflf/xUtils3
-
-运行案例
-
-关联xUtils3的库
-
-在Application中初始化xUtils3   `public class BeijingNewsApplication extends Application {
-/******
-所有组件被创建之前执行
- */
-@Override
-public void onCreate() {
-    super.onCreate();
-    x.Ext.setDebug(true);...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day1/">
-            
-                <span>Android开发day1</span>
-        </a>
-        <div class="abstract-content">
-            红点移动的原理利用距离左边的距离实现红点的移动 params.leftMargin = 动态值
- 屏幕滑动的距离： 屏幕宽 = 屏幕滑动的百分比 两点间移动的距离：间距 = 屏幕滑动的距离： 屏幕宽 = 屏幕滑动百分比（已知）
- 两点间移动的距离 = 屏幕滑动百分比 * 间距 两点间滑动距离对应的坐标 = 原来的起始位置 +  两点间移动的距离
-  params.leftMargin = 两点间滑动距离对应的坐标
- 间距  = 第1个点距离左边的距离 - 第0个点距离左边的距离
-SlidingMenu的使用
-下载下载地址：https://github.com/jfeinstein10/S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2018/12/15/Android开发day7/" title="">
+                    <div class="prevTitle">[Untitled Post]</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -655,6 +541,24 @@ SlidingMenu的使用
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1039,6 +943,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

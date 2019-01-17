@@ -346,216 +346,26 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day6/">
+        <a class="abstract-title" href="/2019/01/17/（亲测可行！！）Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题/">
             
-                <span>Android开发day6</span>
+                <span>Tensorflow安装在导入模块时会出现ImportError_ DLL load failed_ 找不到指定的模块的问题</span>
         </a>
         <div class="abstract-content">
-            
-
+            相信很多人在运行pip install –upgrade tensorflow后会测试TensorFlow是否真正安装成功
+但是，在导入模块时会出现ImportError: DLL load failed: 找不到指定的模块。这个错误。这个错误，博主也踩了不少坑。。。
+首先，博主是按照如下链接进行安装的 ：https://blog.csdn.net/dy_guox/article/details/79081499
+当到了如下图所示的步骤时：但再输入第一行 import tensorflow as tf 时出现如下错误：然后博主不断找解决办法，重新安装anaconda、重新安装visual...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/17</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day5/">
-            
-                <span>Android开发day5</span>
-        </a>
-        <div class="abstract-content">
-            第三方联网框架测试性能方案简介Volley联网请求时间第一次 Volley–passTime==178
-第二次Volley–passTime==146
-第三次Volley–passTime==97
-第四次 Volley–passTime==86
-第五次Volley–passTime==48
-第六次Volley–passTime==91
-Volley–passTime==145
-Volley–passTime==47
-XUtils3联网请求第一次 xUtils3–passTime==319
-第二次xUtils3–passTime==50
-第三次xUtils3–passTime==66
-第四...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day4/">
-            
-                <span>Android开发day4</span>
-        </a>
-        <div class="abstract-content">
-            顶部新闻轮播图事件处理重写dispatchTouchEvent，并且要在按下的时候getParent().requestDisallowInterceptTouchEvent(true);
-判断滑动方向，在X轴和Y轴滑动的绝对值谁大就是在什么方向滑动
-一，竖直方向滑动 getParent().requestDisallowInterceptTouchEvent(false);
-二，水平方向滑动2.1，当滑动到ViewPager的第0个页面，并且是从左到右滑动 getParent().requestDisallowInterceptTouchEvent(false);
-2.2，当滑动到Vi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day3/">
-            
-                <span>Android开发day3</span>
-        </a>
-        <div class="abstract-content">
-            ViewPagerIndicator的使用
-下载下载地址：https://github.com/JakeWharton/ViewPagerIndicator
-
-解压导入Android studio运行案例ViewPagerIndicator
-
-
-
-开始集成-关联ViewPagerIndicator的库
-
-
-写布局文件
-1234567891011121314151617181920  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;LinearLayout xmlns:android=&quot;htt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day2/">
-            
-                <span>Android开发day2</span>
-        </a>
-        <div class="abstract-content">
-            xUtils3的使用主要功能：数据库的操作，联网请求数据，图片请求，初始化控件 
-
-下载解压下载地址：https://github.com/wyouflf/xUtils3
-
-运行案例
-
-关联xUtils3的库
-
-在Application中初始化xUtils3   `public class BeijingNewsApplication extends Application {
-/******
-所有组件被创建之前执行
- */
-@Override
-public void onCreate() {
-    super.onCreate();
-    x.Ext.setDebug(true);...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/Android开发day1/">
-            
-                <span>Android开发day1</span>
-        </a>
-        <div class="abstract-content">
-            红点移动的原理利用距离左边的距离实现红点的移动 params.leftMargin = 动态值
- 屏幕滑动的距离： 屏幕宽 = 屏幕滑动的百分比 两点间移动的距离：间距 = 屏幕滑动的距离： 屏幕宽 = 屏幕滑动百分比（已知）
- 两点间移动的距离 = 屏幕滑动百分比 * 间距 两点间滑动距离对应的坐标 = 原来的起始位置 +  两点间移动的距离
-  params.leftMargin = 两点间滑动距离对应的坐标
- 间距  = 第1个点距离左边的距离 - 第0个点距离左边的距离
-SlidingMenu的使用
-下载下载地址：https://github.com/jfeinstein10/S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Android开发">Android开发</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="TensorFlow爬坑记">TensorFlow爬坑记</a>
     
 </div>
             
