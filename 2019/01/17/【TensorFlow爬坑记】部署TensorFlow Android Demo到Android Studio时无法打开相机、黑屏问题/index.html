@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">199</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">217</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -408,7 +408,7 @@ height:50vh;
 <p>在运行官方demo时，出现如下图黑屏情况：<br><img src="https://img-blog.csdnimg.cn/20190117175309335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>初步断定，没有打开到相机应用，于是定位到Camera.Activity时，发现的确报错，如图：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190117175515903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>原来，这是因为由于Android studio3.2.1版本问题，在AndroidManifest.xml中弃用了<br><code>&lt;uses-sdk&gt;</code>标签，导致Activity默认读取SDKversion为1<br><img src="https://img-blog.csdnimg.cn/20190117175633283.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>同时，还有一点至为关键，按照步骤执行官方提示的步骤时，把如下nativeBuildSystem设置为’none’。<br><img src="https://img-blog.csdnimg.cn/20190117175931476.png" alt="在这里插入图片描述"><br>再滚动到defaultConfig中，发现问题就出现在这个if判断语句中，明显的看出，只有nativeBuildSystem为‘cmake’时，才执行defaultConfig语句块。<img src="https://img-blog.csdnimg.cn/20190117180205766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt=""><br>于是乎，为解决问题，在外部声明此语句块：<br><img src="https://img-blog.csdnimg.cn/20190117180323405.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>重新sync now并构建应用，成功打开相机！</p>
 <p><img src="https://img-blog.csdnimg.cn/20190117180429212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyNTgxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-
+<h1 id="图被吃了-看我CSDN博客吧。。。"><a href="#图被吃了-看我CSDN博客吧。。。" class="headerlink" title="图被吃了 看我CSDN博客吧。。。"></a>图被吃了 看我CSDN博客吧。。。</h1><h2 id="https-blog-csdn-net-weixin-43325818-article-details-86529004"><a href="#https-blog-csdn-net-weixin-43325818-article-details-86529004" class="headerlink" title="https://blog.csdn.net/weixin_43325818/article/details/86529004"></a><a href="https://blog.csdn.net/weixin_43325818/article/details/86529004" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43325818/article/details/86529004</a></h2>
     </article>
     <!-- license  -->
     
@@ -416,7 +416,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Virgil459</a>
             </p><p>原文链接：<a href="http://yoursite.com/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">http://yoursite.com/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">January 17th 2019, 10:51:46 am</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">January 17th 2019, 6:10:08 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/">January 23rd 2019, 4:03:02 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -560,7 +560,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图被吃了-看我CSDN博客吧。。。"><span class="toc-number">1.</span> <span class="toc-text">图被吃了 看我CSDN博客吧。。。</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#https-blog-csdn-net-weixin-43325818-article-details-86529004"><span class="toc-number">1.1.</span> <span class="toc-text">https://blog.csdn.net/weixin_43325818/article/details/86529004</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
