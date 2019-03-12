@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>CTF技巧 · VirgilG72&#39;s Blog</title>
+    <title>单例模式 · VirgilG72&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">VirgilG72&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">CTF技巧</a>
+                <a href="#" class="post-name">单例模式</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            CTF技巧
+            单例模式
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="CTF技巧">CTF技巧</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="设计模式">设计模式</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">37</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/15</span>
+                    <span class="post-intro-time">2019/03/12</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,17 +401,43 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="CTF技巧"><a href="#CTF技巧" class="headerlink" title="CTF技巧"></a>CTF技巧</h1><p>参加CTF培训做的笔记。由于华为的备忘录分享只能变成图片分享，所以将就着看吧。<br>test!</p>
-<p><img src="https://i.imgur.com/0LF7P1R.jpg" alt=""></p>
+        <blockquote>
+<p>想法来源：在学习使用retrofit网络请求框架时，学习了retrofit框架的源码分析，源码中用到了不少设计模式的思想 如：建造者模式、装饰模式、外观模式、代理模式、策略模式、工厂模式、单例模式等等，再加上之前的CVTE面试考察了设计模式的知识点，于是乎决定做个Java设计模式的总结。第一篇献给单例模式，因为单例模式最为常用，而且用法最多。</p>
+</blockquote>
+<h1 id="1-单例模式介绍"><a href="#1-单例模式介绍" class="headerlink" title="1.单例模式介绍"></a>1.单例模式介绍</h1><h2 id="1-1单例模式说明"><a href="#1-1单例模式说明" class="headerlink" title="1.1单例模式说明"></a>1.1单例模式说明</h2><p>实现一个类只有1个实例化对象&amp;提供一个全局访问点</p>
+<hr>
+<h2 id="1-2作用"><a href="#1-2作用" class="headerlink" title="1.2作用"></a>1.2作用</h2><p>保证一个类只有一个对象，降低耦合度</p>
+<hr>
+<h2 id="1-3单例模式优点"><a href="#1-3单例模式优点" class="headerlink" title="1.3单例模式优点"></a>1.3单例模式优点</h2><ul>
+<li>提供了对唯一实例的受控访问</li>
+<li>由于一个类只有一个对象，节约系统资源，提高系统性能，降低耦合度</li>
+</ul>
+<hr>
+<h2 id="1-4单例模式缺点"><a href="#1-4单例模式缺点" class="headerlink" title="1.4单例模式缺点"></a>1.4单例模式缺点</h2><ol>
+<li>单例类的职责过重，违背了“单一职责原则”</li>
+<li>如果实例化对象长时间不使用，会被系统当成垃圾回收</li>
+</ol>
+<hr>
+<h1 id="2-单例模式的实现方式"><a href="#2-单例模式的实现方式" class="headerlink" title="2.单例模式的实现方式"></a>2.单例模式的实现方式</h1><h2 id="2-1-饿汉式"><a href="#2-1-饿汉式" class="headerlink" title="2.1 饿汉式"></a>2.1 饿汉式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton ourinstance =<span class="keyword">new</span> Singleton();<span class="comment">//JVM加载该类时，实例化对象，保证只有一个类只有一个对象</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//使用private关键字修饰构造方法，封锁Singleton，防止被实例化对象</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//获取唯一对象的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> ourinstance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>饿汉式优点：单例对象 线程安全 占用内存小，运行速度快</strong></p>
+<h2 id="2-2-enum枚举类型"><a href="#2-2-enum枚举类型" class="headerlink" title="2.2 enum枚举类型"></a>2.2 enum枚举类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Singleton;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Enum &#123;</span><br><span class="line">	Instance;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取单例的方式：</span></span><br><span class="line"><span class="comment">//Enum instance=Enum.Instance;</span></span><br></pre></td></tr></table></figure>
+<p><strong>枚举型优点：最简单、易用的单例模式，是实现单例模式的最佳方法</strong></p>
+<h2 id="2-3-懒汉式"><a href="#2-3-懒汉式" class="headerlink" title="2.3 懒汉式"></a>2.3 懒汉式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Singleton;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Lanhan</span> </span>&#123;</span><br><span class="line">	<span class="comment">//加载类时，先不实例化对象</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Lanhan ourinstance =<span class="keyword">null</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//使用private关键字修饰构造方法，封锁Singleton，防止被实例化对象</span></span><br><span class="line">		<span class="function"><span class="keyword">private</span> <span class="title">Lanhan</span><span class="params">()</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//手动实例化对象，延迟加载</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Lanhan <span class="title">newinstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (ourinstance==<span class="keyword">null</span>) &#123;</span><br><span class="line">			ourinstance=<span class="keyword">new</span> Lanhan();</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ourinstance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>懒汉型优点：创建单例时机可控，延迟加载，手动实例化对象</strong><br><strong>懒汉型缺点：多线程下不安全，假设线程A、B在并发创建对象，线程A执行到ourinstance=new Lanhan();时（实例化对象时需要时间），线程B执行到if (ourinstance==null)的判断条件中，此时判断为true，于是乎，线程A、B各实例化出对象，共有两个对象，违背了单例模式的原则</strong></p>
+<h2 id="2-4同步锁（懒汉式的改进）"><a href="#2-4同步锁（懒汉式的改进）" class="headerlink" title="2.4同步锁（懒汉式的改进）"></a>2.4同步锁（懒汉式的改进）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//写法1</span></span><br><span class="line"><span class="keyword">package</span> Singleton;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Lanhan</span> </span>&#123;</span><br><span class="line">	<span class="comment">//加载类时，先不实例化对象</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Lanhan ourinstance =<span class="keyword">null</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//使用private关键字修饰构造方法，封锁Singleton，防止被实例化对象</span></span><br><span class="line">		<span class="function"><span class="keyword">private</span> <span class="title">Lanhan</span><span class="params">()</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//加入同步锁，线程A执行该方法时，其他线程进入阻塞状态，直到线程A执行完该方法，才让其他线程执行方法。保证线程安全</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> Lanhan <span class="title">newinstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (ourinstance==<span class="keyword">null</span>) &#123;</span><br><span class="line">			ourinstance=<span class="keyword">new</span> Lanhan();</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ourinstance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//写法2</span></span><br><span class="line"><span class="keyword">package</span> Singleton;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Lanhan</span> </span>&#123;</span><br><span class="line">	<span class="comment">//加载类时，先不实例化对象</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Lanhan ourinstance =<span class="keyword">null</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//使用private关键字修饰构造方法，封锁Singleton，防止被实例化对象</span></span><br><span class="line">		<span class="function"><span class="keyword">private</span> <span class="title">Lanhan</span><span class="params">()</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//加入同步锁，线程A执行该方法时，其他线程进入阻塞状态，直到线程A执行完该方法，才让其他线程执行方法。保证线程安全</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span>  <span class="keyword">static</span> Lanhan <span class="title">newinstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">synchronized</span> (Lanhan.class) &#123;</span><br><span class="line">			<span class="keyword">if</span> (ourinstance==<span class="keyword">null</span>) &#123;</span><br><span class="line">				ourinstance=<span class="keyword">new</span> Lanhan();</span><br><span class="line">				</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ourinstance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>同步锁优点：加入同步锁后，保证线程安全</strong><br><strong>同步锁缺点：每次执行该方法，都要线程同步,造成过多的成本开销（加锁的时候耗时、耗能）</strong></p>
+<h2 id="2-5双重校验锁-同步锁的改进"><a href="#2-5双重校验锁-同步锁的改进" class="headerlink" title="2.5双重校验锁(同步锁的改进)"></a>2.5双重校验锁(同步锁的改进)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Singleton;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">inStatic</span> </span>&#123;</span><br><span class="line">	<span class="comment">//定义一个静态内部类，在静态内部类中实例化单例对象</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Instance</span></span>&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">static</span> inStatic ourinstance=<span class="keyword">new</span> inStatic();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//使用private关键字修饰构造方法，封锁Singleton，防止被实例化对象</span></span><br><span class="line">		<span class="function"><span class="keyword">private</span> <span class="title">inStatic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//执行此方法时，JVM加载静态内部类，而JVM只能加载一遍，在保证只生成一个实例化对象的同时，还能实现延迟加载功能。	</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> inStatic <span class="title">getInstance</span> <span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Instance.ourinstance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>静态内部类优点：保证线程安全，节约资源，在保证只生成一个实例化对象的同时，还能实现延迟加载功能。</strong></p>
+<h2 id="最后附上六大实现方式的总结与对比"><a href="#最后附上六大实现方式的总结与对比" class="headerlink" title="最后附上六大实现方式的总结与对比"></a>最后附上六大实现方式的总结与对比</h2><p><img src="/2019/03/12/单例模式/outline.png" alt=""></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">Virgil459</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2018/12/15/ctf/">http://yoursite.com/2018/12/15/ctf/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2018/12/15/ctf/">December 15th 2018, 8:30:11 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2018/12/15/ctf/">December 15th 2018, 8:37:27 pm</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/03/12/单例模式/">http://yoursite.com/2019/03/12/单例模式/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/03/12/单例模式/">March 12th 2019, 4:32:41 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/03/12/单例模式/">March 12th 2019, 5:30:32 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -419,17 +445,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/01/17/【TensorFlow爬坑记】部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题/" title="部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题">
-                    <div class="nextTitle">部署TensorFlow Android Demo到Android Studio时无法打开相机、黑屏问题</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/12/13/科目三注意事项/" title="科目三注意事项">
-                    <div class="prevTitle">科目三注意事项</div>
+                <a href="/2019/01/23/Android-Service-AIDL-Demo/" title="Android Service AIDL Demo">
+                    <div class="prevTitle">Android Service AIDL Demo</div>
                 </a>
             
         </li>
@@ -555,7 +576,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CTF技巧"><span class="toc-number">1.</span> <span class="toc-text">CTF技巧</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-单例模式介绍"><span class="toc-number">1.</span> <span class="toc-text">1.单例模式介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1单例模式说明"><span class="toc-number">1.1.</span> <span class="toc-text">1.1单例模式说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2作用"><span class="toc-number">1.2.</span> <span class="toc-text">1.2作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3单例模式优点"><span class="toc-number">1.3.</span> <span class="toc-text">1.3单例模式优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4单例模式缺点"><span class="toc-number">1.4.</span> <span class="toc-text">1.4单例模式缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-单例模式的实现方式"><span class="toc-number">2.</span> <span class="toc-text">2.单例模式的实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-饿汉式"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 饿汉式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-enum枚举类型"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 enum枚举类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-懒汉式"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 懒汉式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4同步锁（懒汉式的改进）"><span class="toc-number">2.4.</span> <span class="toc-text">2.4同步锁（懒汉式的改进）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5双重校验锁-同步锁的改进"><span class="toc-number">2.5.</span> <span class="toc-text">2.5双重校验锁(同步锁的改进)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后附上六大实现方式的总结与对比"><span class="toc-number">2.6.</span> <span class="toc-text">最后附上六大实现方式的总结与对比</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
